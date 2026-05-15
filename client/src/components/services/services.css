@@ -1,0 +1,251 @@
+:root {
+  --accent: #6366f1;
+  --gradient-1: #667eea;
+  --gradient-2: #764ba2;
+  --muted: #6b7280;
+  --card-bg: #ffffff;
+  --text: #111827;
+  --text-light: #374151;
+  --border-color: #e5e7eb;
+}
+
+.services-page {
+  min-height: 100vh;
+  padding: 60px 0;
+  background: linear-gradient(180deg, rgba(102,126,234,0.06) 0%, rgba(118,75,162,0.04) 100%);
+}
+
+/* Privacy Header */
+.privacy-header {
+  text-align: center;
+  margin-bottom: 40px;
+  animation: fadeInDown 0.6s ease;
+}
+
+.privacy-icon-bg {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto 25px;
+  background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  color: white;
+  box-shadow: 0 10px 30px rgba(99, 102, 241, 0.3);
+}
+
+.privacy-header h1 {
+  color: var(--accent);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.privacy-header .lead {
+  color: var(--text-light);
+  font-size: 1.1rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Intro Card */
+.services-intro-card {
+  border-left: 6px solid var(--gradient-1);
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.02), rgba(118, 75, 162, 0.02));
+  border-radius: 12px;
+}
+
+.intro-text {
+  font-size: 1.05rem;
+  color: var(--text-light);
+  line-height: 1.8;
+  margin: 0;
+}
+
+.intro-text strong {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Privacy Section Cards */
+.privacy-section-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 28px;
+  box-shadow: 0 4px 15px rgba(15, 23, 42, 0.08);
+  border-top: 4px solid var(--accent);
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.privacy-section-card:hover {
+  box-shadow: 0 12px 30px rgba(99, 102, 241, 0.15);
+  transform: translateY(-5px);
+}
+
+.section-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(118, 75, 162, 0.1));
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.privacy-section-card h3 {
+  color: var(--text);
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  margin-top: 0;
+}
+
+.privacy-section-card p {
+  color: var(--text-light);
+  line-height: 1.7;
+  margin: 0;
+  flex-grow: 1;
+}
+
+/* Info Card */
+.services-info-card {
+  border-left: 6px solid var(--accent);
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.02), rgba(118, 75, 162, 0.02));
+}
+
+.services-info-card h4 {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  margin-top: 20px;
+}
+
+.info-item {
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  border-left: 4px solid var(--accent);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+  transition: all 0.3s ease;
+}
+
+.info-item:hover {
+  box-shadow: 0 6px 16px rgba(99, 102, 241, 0.12);
+  transform: translateX(3px);
+}
+
+.info-item strong {
+  color: var(--accent);
+  display: block;
+  margin-bottom: 8px;
+  font-size: 1.05rem;
+}
+
+.info-item p {
+  color: var(--text-light);
+  line-height: 1.6;
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* Base Card Styles */
+.services-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+  padding: 32px;
+}
+
+.services-card h2 {
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.services-card h3 {
+  color: var(--text);
+  margin-top: 1.25rem;
+}
+
+.services-card p {
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+.services-meta {
+  color: var(--muted);
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+/* Privacy Footer */
+.privacy-footer {
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 30px;
+  border-top: 2px solid var(--border-color);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .privacy-header h1 {
+    font-size: 2rem;
+  }
+
+  .privacy-header .lead {
+    font-size: 1rem;
+  }
+
+  .privacy-icon-bg {
+    width: 80px;
+    height: 80px;
+    font-size: 40px;
+  }
+
+  .services-card {
+    padding: 24px;
+  }
+
+  .privacy-section-card {
+    padding: 20px;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 992px) {
+  .services-card {
+    padding: 40px;
+  }
+
+  .privacy-section-card {
+    padding: 32px;
+  }
+}

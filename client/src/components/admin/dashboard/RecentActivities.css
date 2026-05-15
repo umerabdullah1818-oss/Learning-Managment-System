@@ -1,0 +1,130 @@
+.recent-activities {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+}
+
+.activities-header {
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.activities-header h5 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0 0 5px 0;
+}
+
+.activities-header small {
+  display: block;
+  font-size: 0.85rem;
+}
+
+.activities-list {
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.activity-item {
+  display: flex;
+  gap: 15px;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-left: 3px solid #f0f0f0;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.activity-item:hover {
+  background-color: #f8f9fa;
+  border-left-color: #3498db;
+}
+
+.activity-icon {
+  min-width: 45px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.1rem;
+  margin-top: 3px;
+}
+
+.activity-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.activity-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin: 0 0 5px 0;
+}
+
+.activity-description {
+  font-size: 0.85rem;
+  color: #7f8c8d;
+  margin: 0 0 8px 0;
+  line-height: 1.4;
+}
+
+.activity-time {
+  font-size: 0.75rem;
+  color: #95a5a6;
+}
+
+.no-activities {
+  text-align: center;
+  padding: 40px 20px;
+  color: #95a5a6;
+}
+
+.no-activities p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+/* Scrollbar styling */
+.activities-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.activities-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.activities-list::-webkit-scrollbar-thumb {
+  background: #bdc3c7;
+  border-radius: 10px;
+}
+
+.activities-list::-webkit-scrollbar-thumb:hover {
+  background: #95a5a6;
+}
+
+@media (max-width: 768px) {
+  .recent-activities {
+    padding: 15px;
+  }
+
+  .activity-item {
+    gap: 12px;
+    padding: 12px;
+  }
+
+  .activity-icon {
+    min-width: 40px;
+    width: 40px;
+    height: 40px;
+    font-size: 0.9rem;
+  }
+}

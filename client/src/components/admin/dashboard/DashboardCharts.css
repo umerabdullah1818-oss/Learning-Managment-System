@@ -1,0 +1,72 @@
+.dashboard-charts {
+  margin-bottom: 40px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 25px;
+}
+
+.chart-card {
+  background: white;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  min-height: 400px;
+}
+
+.chart-card:hover {
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.combined-card {
+  min-height: auto;
+}
+
+/* Grid for two charts side by side */
+.charts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 1024px) {
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.inner-chart {
+  width: 100%;
+}
+
+.small-chart-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.chart-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+@media (max-width: 768px) {
+  .chart-card {
+    padding: 15px;
+    min-height: 300px;
+  }
+
+  .chart-title {
+    font-size: 1rem;
+  }
+
+  .charts-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}

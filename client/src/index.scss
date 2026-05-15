@@ -1,0 +1,20 @@
+// Bootstrap 5.3.8: Use compiled CSS to avoid Dart Sass deprecation warnings
+// Import Bootstrap's compiled CSS from JS instead of compiling node_modules SCSS here.
+// See client/src/main.jsx for the runtime CSS import.
+
+// Bootstrap Icons 1.13.1: For iconography, imported alongside Bootstrap.
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+// Font Awesome 7.0.1: Additional icon library
+@import "@fortawesome/fontawesome-free/css/all.css";
+
+// Custom SCSS for overrides and components
+// Add your custom styles here
+
+// Example: Override Bootstrap variables
+// $primary: #007bff;
+
+// Custom components
+// .custom-class {
+//   // styles
+// }

@@ -1,0 +1,646 @@
+/* Dashboard Layout Fixes */
+
+/* Ensure proper spacing between all cards */
+.card {
+    margin-bottom: 1.5rem;
+    height: 100%;
+}
+
+/* Fix grid spacing */
+.row {
+    --bs-gutter-y: 1.5rem;
+    --bs-gutter-x: 1.5rem;
+}
+
+/* Dashboard stats row - reduced gutter for 5 cards */
+.dashboard-stats .row {
+    --bs-gutter-x: 0.75rem;
+}
+
+/* Ensure cards don't overlap - but exclude form fields */
+.dashboard-section .col-lg-3, .dashboard-section .col-lg-4, .dashboard-section .col-lg-6, .dashboard-section .col-lg-8,
+.dashboard-section .col-md-3, .dashboard-section .col-md-4, .dashboard-section .col-md-6, .dashboard-section .col-md-8,
+.dashboard-section .col-xl-3, .dashboard-section .col-xl-4, .dashboard-section .col-xl-6, .dashboard-section .col-xl-8 {
+    margin-bottom: 1.5rem;
+}
+
+/* Ensure form fields display properly */
+form .row {
+    --bs-gutter-y: 0;
+    --bs-gutter-x: 0;
+}
+
+form .col-12, form .col-md-6, form .col-lg-6 {
+    margin-bottom: 0 !important;
+}
+
+/* Fix chart containers */
+.chart-container {
+    position: relative;
+    height: 300px;
+    width: 100%;
+}
+
+.chart-container canvas {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Small charts */
+.chart-container-sm {
+    position: relative;
+    height: 50px;
+    width: 100%;
+}
+
+.chart-container-sm canvas {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Fix analytics cards */
+.analytics-card {
+    min-height: 180px;
+}
+
+/* Fix social cards */
+.social-card {
+    min-height: 140px;
+}
+
+/* Profile card height */
+.profile-card {
+    min-height: 320px;
+}
+
+/* Reviews widget height */
+.reviews-widget {
+    min-height: 320px;
+}
+
+/* Course card height */
+.course-card {
+    min-height: 320px;
+}
+
+/* Server usage card */
+.server-usage-card {
+    min-height: 400px;
+}
+
+/* Browser status card */
+.browser-status-card {
+    min-height: 400px;
+}
+
+/* Country visits card */
+.country-visits-card {
+    min-height: 400px;
+}
+
+/* Ensure proper padding */
+main {
+    padding: 1.5rem;
+}
+
+.container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+/* Fix overlapping on mobile */
+@media (max-width: 768px) {
+    .row {
+        --bs-gutter-y: 1rem;
+        --bs-gutter-x: 1rem;
+    }
+
+    .col-12 {
+        margin-bottom: 1rem;
+    }
+
+    main {
+        padding: 1rem;
+    }
+
+    .card {
+        margin-bottom: 1rem;
+    }
+}
+
+/* Ensure equal height cards in same row */
+.row-equal-height {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row-equal-height > [class*='col-'] {
+    display: flex;
+    flex-direction: column;
+}
+
+.row-equal-height .card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.row-equal-height .card-body {
+    flex: 1;
+}
+
+/* Fix spacing between sections */
+.dashboard-section {
+    margin-bottom: 2rem;
+}
+
+/* Prevent content overflow */
+.card-body {
+    overflow-x: hidden;
+}
+
+/* Fix progress bars */
+.progress {
+    height: 6px;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Standardize card headers */
+.card-header {
+    background: transparent;
+    border-bottom: 1px solid rgba(0,0,0,0.125);
+    padding: 1rem 1.25rem;
+}
+
+/* Fix notification dropdown width */
+.dropdown-menu {
+    max-width: 350px;
+}
+
+/* Ensure cards stay within viewport */
+.card {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+/* ===== STUDENT DASHBOARD STYLES ===== */
+
+.student-dashboard {
+    min-height: 100vh;
+    padding: 20px;
+    /* background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dashboard-header {
+    text-align: center;
+    color: white;
+    margin-bottom: 40px;
+    padding: 20px 0;
+}
+
+.dashboard-header h1 {
+    font-size: 2.5rem;
+    margin: 0 0 10px 0;
+    font-weight: 600;
+}
+
+.dashboard-header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin: 0;
+}
+
+/* Stats Container */
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.stat-card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.stat-icon {
+    font-size: 3rem;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: #f0f0f0;
+}
+
+.stat-content h3 {
+    margin: 0 0 5px 0;
+    font-size: 0.95rem;
+    color: #666;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.stat-value {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Dashboard Grid */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.dashboard-section {
+    background: white;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-section h2 {
+    margin: 0 0 20px 0;
+    font-size: 1.5rem;
+    color: #333;
+    border-bottom: 3px solid #667eea;
+    padding-bottom: 10px;
+}
+
+/* Courses List */
+.courses-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.course-card {
+    border: 2px solid #f0f0f0;
+    border-radius: 10px;
+    padding: 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.course-card:hover {
+    border-color: #667eea;
+    background: #f9f9ff;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.1);
+}
+
+.course-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.course-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: #667eea;
+    font-weight: 600;
+}
+
+.course-status {
+    background: #e0f2fe;
+    color: #0369a1;
+    padding: 3px 10px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.course-name {
+    margin: 5px 0;
+    color: #333;
+    font-weight: 500;
+}
+
+.course-professor {
+    margin: 5px 0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.course-meta {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: #999;
+}
+
+/* Assignments List */
+.assignments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.assignment-item {
+    border-left: 4px solid #667eea;
+    padding: 12px 15px;
+    background: #f9f9ff;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.assignment-item:hover {
+    background: #f0f2ff;
+    transform: translateX(5px);
+}
+
+.assignment-title {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.assignment-course {
+    font-size: 0.85rem;
+    color: #667eea;
+    font-weight: 500;
+}
+
+.assignment-due {
+    font-size: 0.85rem;
+    color: #e74c3c;
+    margin-top: 5px;
+}
+
+/* Grades List */
+.grades-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.grade-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    background: #f5f5f5;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.grade-item:hover {
+    background: #efefef;
+}
+
+.grade-course {
+    font-weight: 500;
+    color: #333;
+}
+
+.grade-value {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.letter-grade {
+    background: #667eea;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    min-width: 40px;
+    text-align: center;
+}
+
+.percentage-grade {
+    color: #666;
+    font-weight: 500;
+}
+
+/* Attendance List */
+.attendance-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.attendance-item {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 12px 15px;
+}
+
+.attendance-course {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+.attendance-stats {
+    display: flex;
+    gap: 20px;
+    font-size: 0.9rem;
+}
+
+.attendance-stats .present {
+    color: #27ae60;
+    font-weight: 500;
+}
+
+.attendance-stats .absent {
+    color: #e74c3c;
+    font-weight: 500;
+}
+
+.attendance-stats .percentage {
+    background: #667eea;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+/* Activities List */
+.activities-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.activity-item {
+    border-left: 4px solid #764ba2;
+    padding: 12px 15px;
+    background: #fafafa;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.activity-item:hover {
+    background: #f5f5f5;
+    transform: translateX(5px);
+}
+
+.activity-type {
+    display: inline-block;
+    background: #764ba2;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.activity-title {
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 4px;
+}
+
+.activity-course {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+.activity-time {
+    font-size: 0.8rem;
+    color: #999;
+    margin-top: 5px;
+}
+
+/* No Data Message */
+.no-data {
+    text-align: center;
+    color: #999;
+    padding: 20px;
+    font-style: italic;
+}
+
+/* Dashboard Actions */
+.dashboard-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.refresh-btn {
+    background: white;
+    color: #667eea;
+    border: 2px solid #667eea;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.refresh-btn:hover {
+    background: #667eea;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Loading and Error States */
+.dashboard-loading,
+.dashboard-error {
+    text-align: center;
+    padding: 60px 20px;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.dashboard-error {
+    background: #e74c3c;
+    border-radius: 10px;
+    margin: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .student-dashboard {
+        padding: 15px;
+    }
+
+    .dashboard-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .stats-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 15px;
+    }
+
+    .stat-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .stat-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 2.5rem;
+    }
+
+    .stat-value {
+        font-size: 1.5rem;
+    }
+
+    .dashboard-section {
+        padding: 15px;
+    }
+
+    .dashboard-section h2 {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-header h1 {
+        font-size: 1.4rem;
+    }
+
+    .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stat-card {
+        padding: 15px;
+    }
+
+    .attendance-stats {
+        flex-direction: column;
+        gap: 5px;
+    }
+}

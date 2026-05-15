@@ -1,0 +1,105 @@
+# =======================================
+# 🔹 Root .gitignore for Full Stack App
+# (Backend: Node + Express + PostgreSQL)
+# (Frontend: React + Bootstrap)
+# =======================================
+
+# -----------------------------
+# 🔸 Node.js (backend)
+# -----------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-lock.yaml
+logs/
+*.log
+pids/
+*.pid
+*.seed
+*.pid.lock
+coverage/
+dist/
+build/
+.tmp/
+.cache/
+.vite/
+.env
+.env.*
+.env.local
+.env.development
+.env.production
+.env.test
+
+# PostgreSQL data / dumps
+*.sql
+*.dump
+*.backup
+pgdata/
+postgres-data/
+
+# -----------------------------
+# 🔸 React (frontend)
+# -----------------------------
+frontend/node_modules/
+frontend/build/
+frontend/dist/
+frontend/.cache/
+frontend/.vite/
+frontend/coverage/
+frontend/*.log
+frontend/.env
+frontend/.env.*
+frontend/.env.local
+frontend/.env.production
+frontend/.env.development
+frontend/.env.test
+frontend/.eslintcache
+frontend/jest-cache/
+frontend/jest/
+
+# -----------------------------
+# 🔸 IDE / OS files
+# -----------------------------
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+.DS_Store
+Thumbs.db
+
+# -----------------------------
+# 🔸 Temporary & Misc
+# -----------------------------
+*.tmp
+*.temp
+*.swp
+*.tgz
+*.zip
+*.gz
+*.tar
+*.rar
+*.tsbuildinfo
+
+# -----------------------------
+# 🔸 Docker / Deployment (optional)
+# -----------------------------
+docker-compose.override.yml
+docker-compose.yml
+*.env.docker
+Dockerfile
+.env.secret
+.envrc
+
+# -----------------------------
+# 🔸 Optional project-specific folders
+# -----------------------------
+# Ignore uploaded or generated files (uncomment if applicable)
+# uploads/
+# public/uploads/
+# logs/
+# backend/logs/
+# frontend/public/uploads/
+
+# Keep example env for setup
+!.env.example

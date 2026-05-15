@@ -1,0 +1,66 @@
+# ============================
+# React + Bootstrap Frontend
+# ============================
+
+# Node modules (installed dependencies)
+node_modules/
+
+# Build output (generated files)
+build/
+dist/
+.cache/
+.vite/
+coverage/
+
+# Environment variables (keep secrets safe)
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+.env.*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+logs/
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+
+# Editor / IDE files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Lint / test cache
+.eslintcache
+jest-cache/
+jest/
+
+# Misc archive files
+*.tgz
+*.zip
+*.gz
+*.tar
+*.rar
+
+# TypeScript build info (if using TypeScript)
+*.tsbuildinfo
+
+# ============================
+# Optional: uncomment if used
+# ============================
+# .env.example        # <- keep this if you share a sample env
+# public/uploads/     # <- ignore user-uploaded assets
+# src/config/keys.js  # <- if storing keys locally (not recommended)
