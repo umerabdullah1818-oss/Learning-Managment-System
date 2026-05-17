@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Layout from '../layouts/Layout';
-import StudentAttendance from '../../components/students/Attendance/StudentAttendance';
+import StudentAttendance from '../../components/students/attendance/StudentAttendance';
 import { toast } from 'react-toastify';
 import { API_BASE_URL } from '../../config/api';
 
