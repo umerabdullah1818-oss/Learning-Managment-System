@@ -74,8 +74,13 @@ app.use((err, req, res, next) => {
   });
 });
 
-// Start server
-app.listen(PORT, '0.0.0.0', () => {
-  console.log(`🚀 Server running on port ${PORT}`);
-  console.log(`📱 Access from mobile: http://10.5.10.215:5173`);
-});
+// Start server (only if not running in Vercel serverless environment)
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, '0.0.0.0', () => {
+    console.log(`🚀 Server running on port ${PORT}`);
+    console.log(`📱 Access from mobile: http://10.5.10.215:5173`);
+  });
+}
+
+// Export the app for Vercel serverless functions
+module.exports = app;

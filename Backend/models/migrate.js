@@ -1,6 +1,7 @@
+const path = require('path');
+require('dotenv').config({ path: path.resolve(__dirname, '../../.env') });
 const pool = require('../config/dbConnection');
 const fs = require('fs');
-const path = require('path');
 
 async function runMigration(closePool = true) {
   try {
