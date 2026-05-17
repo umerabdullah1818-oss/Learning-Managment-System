@@ -154,7 +154,7 @@ const createMinimalStudent = async ({ fullName = null, email, role = 'student', 
   const query = `
     INSERT INTO students (full_name, email, student_id, account_status, role, created_at)
     VALUES ($1, $2, $3, $4, $5, CURRENT_TIMESTAMP)
-    RETURNING id, full_name, student_id, b, course, date_of_birth,
+    RETURNING id, full_name, student_id, department, course, date_of_birth,
              gender, phone, parent_phone, address, city, state, postal_code,
              profile_image, email, account_status, role, created_at;
   `;

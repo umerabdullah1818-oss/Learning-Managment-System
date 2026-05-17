@@ -34,10 +34,14 @@ app.use('/assignments', express.static(path.join(__dirname, '../public/assignmen
 app.use('/submissions', express.static(path.join(__dirname, '../public/submissions')));
 
 // Test DB connection
-pool.query('SELECT NOW()', (err, res) => {
-  if (err) console.error('❌ Database connection failed:', err);
-  else console.log('✅ Database connected successfully at', res.rows[0].now);
-});
+(async () => {
+  try {
+    const res = await pool.query('SELECT NOW()');
+    console.log('✅ Database connected successfully at', res.rows[0].now);
+  } catch (err) {
+    console.error('❌ Database connection failed:', err);
+  }
+})();
 
 // Routes
 app.use('/api/auth', require('./routes/authRoutes'));

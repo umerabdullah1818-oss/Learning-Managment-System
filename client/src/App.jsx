@@ -3,8 +3,7 @@ import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { Provider } from 'react-redux'
-import store from './redux/store'
+
 import { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { fetchProfile } from './redux/slices/authSlice'
@@ -77,7 +76,7 @@ function App() {
   };
 
   return (
-        <Provider store={store}>
+        <>
           <AuthInitializer />
           <Chatbot />
           <Router>
@@ -171,15 +170,13 @@ function App() {
         <Route path="/pdf-viewer" element={<ProtectedRoute><Layout><div>PDF Viewer</div></Layout></ProtectedRoute>} />
         <Route path="/google-map" element={<ProtectedRoute><Layout><div>Interactive Maps</div></Layout></ProtectedRoute>} />
         <Route path="/data-maps" element={<ProtectedRoute><Layout><div>Data Maps</div></Layout></ProtectedRoute>} />
-        <Route path="/login" element={<ProtectedRoute><Layout><div>Login</div></Layout></ProtectedRoute>} />
-        <Route path="/register" element={<ProtectedRoute><Layout><div>Register</div></Layout></ProtectedRoute>} />
-        <Route path="/password-recovery" element={<ProtectedRoute><Layout><div>Forgot Password</div></Layout></ProtectedRoute>} />
+
         <Route path="/change-password" element={<ProtectedRoute><ChangePasswordPage /></ProtectedRoute>} />
         <Route path="/404" element={<Error404 />} />
         <Route path="/500" element={<Error500 />} />
         </Routes>
       </Router>
-    </Provider>
+    </>
   )
 }
 
